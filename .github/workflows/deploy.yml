@@ -17,6 +17,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment: github-pages
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -27,6 +28,7 @@ jobs:
         run: npm ci
       - name: Build
         env:
+          NEXT_PUBLIC_RESEND_API_KEY: ${{ vars.RESEND_API_KEY }}
           RESEND_API_KEY: ${{ vars.RESEND_API_KEY }}
         run: npm run build
       - name: Upload artifact

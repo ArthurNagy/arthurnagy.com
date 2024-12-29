@@ -3,7 +3,7 @@ import { Resend } from 'resend'
 import { headers } from 'next/headers'
 import { rateLimit } from '@/utils/rateLimiter'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+const resend = new Resend(process.env.RESEND_API_KEY || process.env.NEXT_PUBLIC_RESEND_API_KEY)
 
 export async function POST(request: Request) {
   try {
