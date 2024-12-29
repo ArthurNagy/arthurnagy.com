@@ -36,4 +36,4 @@ yarn-error.log*
 next-env.d.ts
 
 # personal assets
-/public/images/profile.jpg
+- /public/images/profile.jpg
