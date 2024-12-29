@@ -74,7 +74,7 @@ export default function Home() {
                 group-active:scale-95"
               >
                 <Image
-                  src="/images/profile.jpg"
+                  src="/images/profile.webp"
                   alt="Arthur Nagy"
                   fill
                   priority
