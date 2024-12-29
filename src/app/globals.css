@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Light theme */
+  --gradient-start: #E6DAFF;  /* More saturated light purple */
+  --gradient-end: #FFECC2;    /* More saturated light yellow */
+  --gradient-middle: #F5EFFF;  /* Purple-tinted white */
+  --gradient-glow: rgba(103, 80, 164, 0.07); /* Primary color glow */
+  --surface-alpha: rgba(255, 251, 255, 0.8);
+  --surface-container-alpha: rgba(243, 239, 244, 0.9);
+  --primary: #6750A4;          /* Deep purple */
+  --on-primary: #FFFFFF;       /* White text on purple */
+  --primary-container: #EADDFF; /* Light purple container */
+  --on-primary-container: #21005E; /* Dark purple text */
+  
+  --secondary: #FFB800;        /* Warm yellow */
+  --on-secondary: #000000;     /* Black text on yellow */
+  --secondary-container: #FFE08C; /* Light yellow container */
+  --on-secondary-container: #261900; /* Dark yellow text */
+  
+  --surface: #FFFBFF;         /* Slightly purple-tinted white */
+  --on-surface: #1C1B1F;      /* Near black text */
+  --surface-container: #F3EFF4; /* Light purple-gray */
+  --surface-container-high: #ECE6ED; /* Slightly darker container */
+  
+  --outline: #79747E;         /* Medium gray with purple tint */
+  --outline-variant: #C4C7CF; /* Light gray outline */
+}
+
+.dark {
+  /* Dark theme */
+  --gradient-start: #160F28;
+  --gradient-end: #251E0E;
+  --gradient-middle: #1A1721;
+  --gradient-glow: rgba(208, 188, 255, 0.03);
+  --surface-alpha: rgba(28, 27, 31, 0.8);
+  --surface-container-alpha: rgba(33, 31, 38, 0.9);
+  --primary: #D0BCFF;
+  --on-primary: #371E73;
+  --primary-container: #4F378B;
+  --on-primary-container: #EADDFF;
+  
+  --secondary: #FFD86E;
+  --on-secondary: #3F2E00;
+  --secondary-container: #5C4300;
+  --on-secondary-container: #FFDEA8;
+  
+  --surface: #1C1B1F;
+  --on-surface: #E6E1E5;
+  --surface-container: #211F26;
+  --surface-container-high: #2B2930;
+  
+  --outline: #938F99;
+  --outline-variant: #444246;
+}
+
+body {
+  color: var(--on-surface);
+  background: 
+    radial-gradient(
+      circle at 0% 0%,
+      var(--gradient-glow) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 100% 100%,
+      var(--gradient-glow) 0%,
+      transparent 50%
+    ),
+    linear-gradient(135deg, 
+      var(--gradient-start) 0%, 
+      var(--gradient-middle) 50%,
+      var(--gradient-end) 100%
+    ),
+    linear-gradient(45deg,
+      var(--gradient-end) 0%,
+      var(--gradient-middle) 50%,
+      var(--gradient-start) 100%
+    );
+  background-size: 100% 100%, 100% 100%, 200% 200%, 200% 200%;
+  animation: gradientMove 20s ease infinite;
+  transition: all 0.3s ease;
+  min-height: 100vh;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 0%, 100% 100%, 0% 0%, 100% 100%;
+  }
+  50% {
+    background-position: 0% 0%, 100% 100%, 100% 100%, 0% 0%;
+  }
+  100% {
+    background-position: 0% 0%, 100% 100%, 0% 0%, 100% 100%;
+  }
+}
+
+/* Material Design elevation */
+.elevation-1 {
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1), 
+              0px 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+.elevation-2 {
+  box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.1), 
+              0px 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Update surface backgrounds to be slightly transparent */
+.bg-surface {
+  background-color: var(--surface-alpha);
+  backdrop-filter: blur(8px);
+}
+
+.bg-surface-container {
+  background-color: var(--surface-container-alpha);
+  backdrop-filter: blur(8px);
+}
+
+/* Glass effect for cards */
+.glass-effect {
+  background-color: var(--surface-alpha);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
