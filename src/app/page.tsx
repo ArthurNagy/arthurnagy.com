@@ -90,7 +90,7 @@ export default function Home() {
             </div>
             <div className="flex-1">
               <h1 className="text-6xl font-medium mb-8">
-                Hi, I'm <span className="text-primary">Arthur Nagy</span>
+                Hi, I&apos;m <span className="text-primary">Arthur Nagy</span>
               </h1>
               
               <p className="text-on-surface/70 text-xl mb-8">

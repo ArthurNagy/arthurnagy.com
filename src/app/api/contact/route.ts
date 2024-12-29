@@ -8,7 +8,7 @@ const resend = new Resend(process.env.RESEND_API_KEY)
 export async function POST(request: Request) {
   try {
     // Get IP address for rate limiting
-    const forwardedFor = headers().get('x-forwarded-for')
+    const forwardedFor = (await headers()).get('x-forwarded-for')
     const ip = forwardedFor?.split(',')[0] || 'unknown'
     
     // Check rate limit
@@ -37,7 +37,7 @@ export async function POST(request: Request) {
     }
 
     // Send email
-    const data = await resend.emails.send({
+    await resend.emails.send({
       from: 'onboarding@resend.dev',
       to: 'arthur.93.nagy@gmail.com',
       subject: `New Contact Form Message from ${name}`,
