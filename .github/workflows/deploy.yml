@@ -26,6 +26,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Build
+        env:
+          RESEND_API_KEY: ${{ vars.RESEND_API_KEY }}
         run: npm run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
