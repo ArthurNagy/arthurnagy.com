@@ -1,7 +1,6 @@
 'use client'
 
 import React from 'react'
-import ThemeToggle from './ThemeToggle'
 
 export default function Header() {
   const scrollToSection = (id: string) => {
@@ -11,14 +10,14 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 bg-surface-container/95 backdrop-blur-sm elevation-1 z-50">
-      <nav className="max-w-4xl mx-auto flex justify-between items-center px-4 h-16">
+      <nav className="max-w-4xl mx-auto flex justify-between items-center px-6 md:px-4 h-16">
         <button 
           onClick={() => scrollToSection('home')} 
           className="text-xl font-medium text-primary hover:text-primary/80 transition-colors"
         >
           Arthur Nagy
         </button>
-        <div className="flex items-center gap-8">
+        <div className="flex items-center gap-4 md:gap-8 ml-4 md:ml-0">
           <button 
             onClick={() => scrollToSection('about')}
             className="text-on-surface/70 hover:text-primary transition-colors"
@@ -37,7 +36,6 @@ export default function Header() {
           >
             Contact
           </button>
-          <ThemeToggle />
         </div>
       </nav>
     </header>
