@@ -132,7 +132,8 @@ export default function Home() {
               </h1>
               
               <p className="text-on-surface/70 text-xl mb-8">
-                a software engineer building mobile products.
+                a software engineer building{' '}
+                <span className="text-[#CC9200] font-medium">mobile products</span>.
               </p>
 
               <div className="flex gap-4">
