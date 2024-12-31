@@ -25,7 +25,7 @@ export default function Home() {
   const experiences: Experience[] = [
     {
       company: 'M-KOPA',
-      title: 'Senior Software Engineer (Android)',
+      title: 'Senior Android Engineer',
       period: '2021 - Present',
       url: 'https://www.m-kopa.com/',
       description: 'M-KOPA is a fintech platform that provides smartphone financing and digital financial services to underserved consumers across Africa, enabling access to digital connectivity and financial inclusion.',
