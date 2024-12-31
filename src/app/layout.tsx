@@ -64,8 +64,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.variable}>
-      <body className={inter.className}>
+    <html lang="en" className={inter.variable} suppressHydrationWarning>
+      <body 
+        className={`${inter.className} dark:dark`}
+        suppressHydrationWarning
+      >
         <Header />
         <AnimatedLayout>
           {children}
