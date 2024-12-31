@@ -3,6 +3,8 @@
 import { useState, FormEvent, useCallback } from 'react'
 import Section from '@/components/Section'
 import Image from 'next/image'
+import ExperienceDialog from '@/components/ExperienceDialog'
+import { Experience } from '@/types/experience'
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(false)
@@ -18,6 +20,33 @@ export default function Home() {
     email: '',
     message: ''
   })
+  const [selectedExperience, setSelectedExperience] = useState<Experience | null>(null)
+
+  const experiences: Experience[] = [
+    {
+      company: 'M-KOPA',
+      title: 'Senior Software Engineer (Android)',
+      period: '2021 - Present',
+      url: 'https://www.m-kopa.com/',
+      description: 'M-KOPA is a fintech platform that provides smartphone financing and digital financial services to underserved consumers across Africa, enabling access to digital connectivity and financial inclusion.',
+    },
+    {
+      company: 'HalcyonMobile',
+      title: 'Android Technical Lead',
+      period: '2015 - 2021',
+      url: 'https://halcyonmobile.com/',
+      description: 'HalcyonMobile is a digital product development agency specializing in designing and building custom mobile and web applications for startups and established businesses.',
+      progression: ['Android Engineer', 'Senior Android Engineer', 'Android Technical Lead']
+    },
+    {
+      company: 'Reea',
+      title: 'Android Software Developer',
+      period: '2014 - 2015',
+      url: 'https://www.reea.net/',
+      description: 'Reea is a software development consultancy that designs and builds custom digital solutions, specializing in web and mobile applications for businesses across diverse industries.',
+      progression: ['Android Intern', 'Android Software Developer']
+    }
+  ]
 
   const handleSubmit = useCallback(async (e: FormEvent) => {
     e.preventDefault();
@@ -58,6 +87,10 @@ export default function Home() {
       [e.target.id]: e.target.value
     });
   };
+
+  const handleExperienceClick = (experience: Experience) => {
+    setSelectedExperience(experience)
+  }
 
   return (
     <main className="pt-16">
@@ -134,36 +167,63 @@ export default function Home() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-medium mb-6">Experience</h2>
           <div className="grid grid-cols-1 gap-6">
-            <div className="bg-surface-container rounded-3xl p-8 elevation-1 hover:elevation-2 transition-all">
-              <div className="flex justify-between items-start mb-2">
-                <h3 className="text-2xl font-medium">Senior Android Developer</h3>
-                <span className="text-on-surface/60 text-sm bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full">
-                  2020 - Present
-                </span>
-              </div>
-              <p className="text-primary mb-6 text-lg">Company</p>
-              <ul className="text-on-surface/70 mb-6 space-y-2">
-                <li>• Led key Android initiatives and architectural decisions</li>
-                <li>• Mentored team members and established development standards</li>
-                <li>• Improved app performance and user experience</li>
-              </ul>
-              <div className="flex flex-wrap gap-2">
-                <span className="px-3 py-1 bg-primary-container text-on-primary-container rounded-full text-sm">
-                  Kotlin
-                </span>
-                <span className="px-3 py-1 bg-primary-container text-on-primary-container rounded-full text-sm">
-                  Android
-                </span>
-                <span className="px-3 py-1 bg-primary-container text-on-primary-container rounded-full text-sm">
-                  Jetpack Compose
-                </span>
-              </div>
-            </div>
+            {experiences.map((experience) => (
+              <button 
+                key={experience.company}
+                onClick={() => handleExperienceClick(experience)}
+                className="group text-left bg-surface-container rounded-3xl p-8 elevation-1 
+                  hover:elevation-2 transition-all cursor-pointer"
+              >
+                <div className="flex justify-between items-start mb-4">
+                  <div>
+                    <h3 className="text-2xl font-medium mb-2">{experience.title}</h3>
+                    <a 
+                      href={experience.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary text-lg hover:text-primary/80 transition-colors"
+                      onClick={(e) => e.stopPropagation()} // Prevent card expansion when clicking link
+                    >
+                      {experience.company}
+                    </a>
+                  </div>
+                  <span className="text-on-surface/60 text-sm bg-secondary-container 
+                    text-on-secondary-container px-3 py-1 rounded-full">
+                    {experience.period}
+                  </span>
+                </div>
+                
+                <p className="text-on-surface/70 mb-4">
+                  {experience.description}
+                </p>
 
-            {/* Second experience card with same styling */}
+                <div className="flex items-center gap-2 text-primary">
+                  <span className="text-sm">View details</span>
+                  <svg 
+                    className="w-5 h-5 transform transition-transform group-hover:translate-x-1" 
+                    fill="none" 
+                    viewBox="0 0 24 24" 
+                    stroke="currentColor"
+                  >
+                    <path 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round" 
+                      strokeWidth={2} 
+                      d="M9 5l7 7-7 7" 
+                    />
+                  </svg>
+                </div>
+              </button>
+            ))}
           </div>
         </div>
       </Section>
+
+      <ExperienceDialog
+        isOpen={selectedExperience !== null}
+        onClose={() => setSelectedExperience(null)}
+        experience={selectedExperience}
+      />
 
       <Section id="contact" className="py-24 px-4 bg-surface-container">
         <div className="max-w-4xl mx-auto">
