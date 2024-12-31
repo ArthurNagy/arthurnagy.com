@@ -175,55 +175,53 @@ export default function Home() {
                 className="group text-left bg-surface-container rounded-3xl p-8 elevation-1 
                   hover:elevation-2 transition-all cursor-pointer"
               >
-                <div className="flex justify-between items-start mb-4">
-                  <div>
-                    <h3 className="text-2xl font-medium mb-2">
-                      <span className="block">{experience.title}</span>
-                      {experience.progression && (
-                        <div className="flex items-center gap-2 mt-1">
-                          <span className="text-base text-on-surface/60">Career progression:</span>
-                          <div className="flex items-center text-sm text-on-surface/60">
-                            {experience.progression.map((role, index) => (
-                              <span key={role} className="flex items-center">
-                                {role}
-                                {index < experience.progression!.length - 1 && (
-                                  <svg 
-                                    className="w-4 h-4 mx-1" 
-                                    fill="none" 
-                                    viewBox="0 0 24 24" 
-                                    stroke="currentColor"
-                                  >
-                                    <path 
-                                      strokeLinecap="round" 
-                                      strokeLinejoin="round" 
-                                      strokeWidth={2} 
-                                      d="M9 5l7 7-7 7" 
-                                    />
-                                  </svg>
-                                )}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-                    </h3>
-                    <a 
-                      href={experience.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-primary text-lg hover:text-primary/80 transition-colors"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      {experience.company}
-                    </a>
+                <div>
+                  <div className="flex flex-wrap items-center justify-between w-full gap-2 mb-2">
+                    <h3 className="text-2xl font-medium">{experience.title}</h3>
+                    <span className="text-on-surface/60 text-sm bg-secondary-container 
+                      text-on-secondary-container px-3 py-1 rounded-full whitespace-nowrap">
+                      {experience.period}
+                    </span>
                   </div>
-                  <span className="text-on-surface/60 text-sm bg-secondary-container 
-                    text-on-secondary-container px-3 py-1 rounded-full whitespace-nowrap">
-                    {experience.period}
-                  </span>
+                  {experience.progression && (
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 mt-1">
+                      <span className="text-base text-on-surface/60">Career progression:</span>
+                      <div className="flex flex-wrap items-center text-sm text-on-surface/60">
+                        {experience.progression.map((role, index) => (
+                          <span key={role} className="flex items-center">
+                            {role}
+                            {index < experience.progression!.length - 1 && (
+                              <svg 
+                                className="w-4 h-4 mx-1" 
+                                fill="none" 
+                                viewBox="0 0 24 24" 
+                                stroke="currentColor"
+                              >
+                                <path 
+                                  strokeLinecap="round" 
+                                  strokeLinejoin="round" 
+                                  strokeWidth={2} 
+                                  d="M9 5l7 7-7 7" 
+                                />
+                              </svg>
+                            )}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                  <a 
+                    href={experience.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary text-lg hover:text-primary/80 transition-colors mt-2 block"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    {experience.company}
+                  </a>
                 </div>
                 
-                <p className="text-on-surface/70 mb-4">
+                <p className="text-on-surface/70 my-4">
                   {experience.description}
                 </p>
 
