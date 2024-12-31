@@ -93,7 +93,7 @@ export default function Home() {
   }
 
   return (
-    <main className="pt-16">
+    <main>
       <Section id="home" className="min-h-[90vh] flex items-center py-16 px-4 bg-surface">
         <div className="max-w-4xl mx-auto">
           <div className="flex flex-col md:flex-row items-center gap-12 mb-12">

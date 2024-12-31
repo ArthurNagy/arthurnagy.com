@@ -110,6 +110,7 @@ body {
 
 /* Smooth scrolling */
 html {
+  scroll-padding-top: 4rem;
   scroll-behavior: smooth;
 }
 
