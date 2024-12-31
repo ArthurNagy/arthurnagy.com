@@ -176,19 +176,48 @@ export default function Home() {
               >
                 <div className="flex justify-between items-start mb-4">
                   <div>
-                    <h3 className="text-2xl font-medium mb-2">{experience.title}</h3>
+                    <h3 className="text-2xl font-medium mb-2">
+                      <span className="block">{experience.title}</span>
+                      {experience.progression && (
+                        <div className="flex items-center gap-2 mt-1">
+                          <span className="text-base text-on-surface/60">Career progression:</span>
+                          <div className="flex items-center text-sm text-on-surface/60">
+                            {experience.progression.map((role, index) => (
+                              <span key={role} className="flex items-center">
+                                {role}
+                                {index < experience.progression!.length - 1 && (
+                                  <svg 
+                                    className="w-4 h-4 mx-1" 
+                                    fill="none" 
+                                    viewBox="0 0 24 24" 
+                                    stroke="currentColor"
+                                  >
+                                    <path 
+                                      strokeLinecap="round" 
+                                      strokeLinejoin="round" 
+                                      strokeWidth={2} 
+                                      d="M9 5l7 7-7 7" 
+                                    />
+                                  </svg>
+                                )}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </h3>
                     <a 
                       href={experience.url}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-primary text-lg hover:text-primary/80 transition-colors"
-                      onClick={(e) => e.stopPropagation()} // Prevent card expansion when clicking link
+                      onClick={(e) => e.stopPropagation()}
                     >
                       {experience.company}
                     </a>
                   </div>
                   <span className="text-on-surface/60 text-sm bg-secondary-container 
-                    text-on-secondary-container px-3 py-1 rounded-full">
+                    text-on-secondary-container px-3 py-1 rounded-full whitespace-nowrap">
                     {experience.period}
                   </span>
                 </div>
