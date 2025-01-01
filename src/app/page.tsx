@@ -42,8 +42,9 @@ export default function Home() {
         "Compose UI Toolkit",
         "MVI",
         "Unidirectional data flow",
+        "Kotlin Coroutines / Flows",
         "AndroidX / Jetpack Suite",
-        "Material Design 3"
+        "Material Design 3",
       ]
     },
     {
