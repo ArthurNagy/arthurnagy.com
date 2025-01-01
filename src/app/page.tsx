@@ -29,6 +29,22 @@ export default function Home() {
       period: '2021 - Present',
       url: 'https://www.m-kopa.com/',
       description: 'M-KOPA is a fintech platform that provides smartphone financing and digital financial services to underserved consumers across Africa, enabling access to digital connectivity and financial inclusion.',
+      longDescription: [
+        "Led the development of various features and projects focusing on improving our customer's repayment rate and overall loan repayment experience(Payments, Payments history, Benefits, Accounts, etc.). These features were developed based on A/B tests, experiments and measurements. The main metric we measured and cared to improve was the repayment rate (repayment speed or collection speed). Some of these experiments improved the repayment rate of different cohorts by 1-3%, resulting in a reduction of our loan loss rates and improving the annual recurring revenue",
+        "Worked together with the UI/UX team on developing a new design system for our app and contributed heavily to the adoption of this latest design system in the customer app while also making sure that we didn't break the look and feel of the app in the transition period of this revamp.",
+        "Led the development of various features and functionalities improving our customers' collateral device management & unlocking experience. These features reduced the incoming incidents to our customer care team by 20% yearly as most of the issues were related to devices not unlocking. This decrease saved the company a significant amount of Customer Care costs per year.",
+        "Contributed to various platform work focusing on the stability and performance of our app. These contributions resulted in an increase in our crash-free sessions to 99.9% from 96.6%, a decrease in the app's total download size by 44% from 16mb to 9mb, a decrease in the initial cold startup time of the app for the 90th percentile of our customers from 6seconds to 3seconds, while hot startup decreased to 800ms from 1.5seconds.",
+        "Involved and led various parts of a complete rewrite and redesign of our app from an outdated multiple activity C# & frontend development inspired MVVM style architecture to a more modern and standard clean architecture and MVI pattern acknowledged and adopted in the Android community introducing Jetpack Compose and concepts like Unidirectional data flow together with a layered architecture of presentation, domain and data"
+      ],
+      tags: [
+        "Kotlin",
+        "Clean architecture",
+        "Compose UI Toolkit",
+        "MVI",
+        "Unidirectional data flow",
+        "AndroidX / Jetpack Suite",
+        "Material Design 3"
+      ]
     },
     {
       company: 'HalcyonMobile',
@@ -36,7 +52,52 @@ export default function Home() {
       period: '2015 - 2021',
       url: 'https://halcyonmobile.com/',
       description: 'HalcyonMobile is a digital product development agency specializing in designing and building custom mobile and web applications for startups and established businesses.',
-      progression: ['Android Engineer', 'Senior Android Engineer', 'Android Technical Lead']
+      progression: ['Android Engineer', 'Senior Android Engineer', 'Android Technical Lead'],
+      roles: [
+        {
+          title: 'Android Technical Lead',
+          period: '2018 - 2021',
+          description: [
+            "Directed technical alignment and established architectural vision on partner projects while supervising 6 technical projects and mentoring 4 engineers into lead roles."
+          ],
+          products: [
+            "Urbantz: Modernized an outdated cross-platform solution for over 20 large enterprise customers.",
+            "Airstar: Designed and developed a BLE-enabled companion app, enabling simple control over 256 connected devices and reducing operation costs.",
+            "MyMy: Led Android development, enabling $4.1M in funding across 2 rounds."
+          ]
+        },
+        {
+          title: 'Senior Android Engineer',
+          period: '2017 - 2018',
+          description: [
+            "Championed Kotlin adoption, reducing codebase size by ~35%, improving developer productivity by ~20%, introducing various patterns, and reducing data state bugs by ~15% while mentoring junior/mid-engineers."
+          ],
+          products: [
+            "rTribe & R2Q: Connected 300k+ individuals with coaches for addiction recovery and mental health support."
+          ]
+        },
+        {
+          title: 'Android Engineer',
+          period: '2015 - 2017',
+          description: [
+            "Led a team of 3 developers, improving efficiency with RxJava (reducing concurrency bugs by ~20%) and DataBinding (reducing UI state bugs by ~25%)."
+          ],
+          products: [
+            "Ryalto: Enabled partnerships with 50+ hospitals & NHS trusts.",
+            "SmartUp: Built a scalable peer-to-peer learning platform, adopted by 10+ organizations."
+          ]
+        }
+      ],
+      tags: [
+        "Kotlin",
+        "Clean Architecture",
+        "MVVM",
+        "Android Architecture Components",
+        "Dependency Injection",
+        "RxJava",
+        "CI/CD",
+        "Technical Leadership"
+      ]
     },
     {
       company: 'Reea',
@@ -44,7 +105,31 @@ export default function Home() {
       period: '2014 - 2015',
       url: 'https://www.reea.net/',
       description: 'Reea is a software development consultancy that designs and builds custom digital solutions, specializing in web and mobile applications for businesses across diverse industries.',
-      progression: ['Android Intern', 'Android Software Developer']
+      progression: ['Android Intern', 'Android Software Developer'],
+      roles: [
+        {
+          title: 'Android Software Developer',
+          period: '2014 - 2015',
+          description: [
+            "Developed native Android applications, involved in the full project development cycle from requirements clarification to delivery.",
+            "Maintained and fixed bugs on legacy projects, increasing crash-free sessions from 97.6% to 99.4%."
+          ]
+        },
+        {
+          title: 'Android Developer Intern',
+          period: '2014',
+          description: [
+            "Developed a simple board game app (Mill/Nine Men's Morris), learning the basics of Android development and applying OOP principles and coding best practices."
+          ]
+        }
+      ],
+      tags: [
+        "Java",
+        "Android SDK",
+        "OOP",
+        "Git",
+        "MVC"
+      ]
     }
   ]
 
