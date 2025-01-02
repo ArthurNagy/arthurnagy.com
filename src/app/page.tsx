@@ -34,12 +34,13 @@ export default function Home() {
         "Worked together with the UI/UX team on developing a new design system for our app and contributed heavily to the adoption of this latest design system in the customer app while also making sure that we didn't break the look and feel of the app in the transition period of this revamp.",
         "Led the development of various features and functionalities improving our customers' collateral device management & unlocking experience. These features reduced the incoming incidents to our customer care team by 20% yearly as most of the issues were related to devices not unlocking. This decrease saved the company a significant amount of Customer Care costs per year.",
         "Contributed to various platform work focusing on the stability and performance of our app. These contributions resulted in an increase in our crash-free sessions to 99.9% from 96.6%, a decrease in the app's total download size by 44% from 16mb to 9mb, a decrease in the initial cold startup time of the app for the 90th percentile of our customers from 6seconds to 3seconds, while hot startup decreased to 800ms from 1.5seconds.",
-        "Involved and led various parts of a complete rewrite and redesign of our app from an outdated multiple activity C# & frontend development inspired MVVM style architecture to a more modern and standard clean architecture and MVI pattern acknowledged and adopted in the Android community introducing Jetpack Compose and concepts like Unidirectional data flow together with a layered architecture of presentation, domain and data"
+        "Involved and led various parts of a complete rewrite and redesign of our app from an outdated multiple activity & frontend development patterns-inspired architecture to more mobile-specific patterns.  Adopted clean architecture with MVVM/MVI pattern for the presentation layer, introduced Jetpack Compose and concepts like Unidirectional data flow together with a layered architecture of presentation, domain and data in a multi-module structure."
       ],
       tags: [
         "Kotlin",
         "Clean architecture",
         "Compose UI Toolkit",
+        "MVVM",
         "MVI",
         "Unidirectional data flow",
         "Kotlin Coroutines / Flows",
