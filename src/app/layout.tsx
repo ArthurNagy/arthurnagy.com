@@ -39,13 +39,6 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  twitter: {
-    title: 'Arthur Nagy',
-    card: 'summary_large_image',
-  },
-  verification: {
-    google: 'your-google-verification-code',
-  },
 };
 
 export const viewport: Viewport = {
