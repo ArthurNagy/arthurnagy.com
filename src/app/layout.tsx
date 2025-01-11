@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AnimatedLayout from "@/components/AnimatedLayout";
+import Script from 'next/script'
 
 const inter = Inter({
   subsets: ["latin"],
@@ -65,6 +66,23 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={inter.variable} suppressHydrationWarning>
+      <head>
+        <Script
+          strategy="afterInteractive"
+          src={`https://www.googletagmanager.com/gtag/js?id=G-Q0VCE32GMQ`}
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+        >
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-Q0VCE32GMQ');
+          `}
+        </Script>
+      </head>
       <body 
         className={`${inter.className} dark:dark`}
         suppressHydrationWarning
